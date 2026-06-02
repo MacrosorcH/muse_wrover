@@ -18,6 +18,13 @@ Basic YAML firmware with simple functionality:
 
 [Flash Muse Luxe Firmware](https://realdeco.github.io/muse_wrover/Muse_Luxe/)
 
+## Muse Luxe VA
+
+-Includes Voice Assistant
+
+[Flash Muse Luxe VA Firmware](https://realdeco.github.io/muse_wrover/Muse_Luxe-VA/)
+
+
 ## Muse Proto
 
 - GPIO0 (boot) button starts and stops playback.
