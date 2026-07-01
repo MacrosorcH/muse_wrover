@@ -4,11 +4,11 @@ substitutions:
 esphome:
   name: muse-luxe
   friendly_name: Muse Luxe
-  min_version: 2026.5.0
+  min_version: 2026.6.0
   name_add_mac_suffix: true
   project:
     name: realdeco.muse_wrover
-    version: "2026.5.0"
+    version: "2026.6.0"
   on_boot:
     priority: -100
     then:
@@ -61,18 +61,6 @@ i2c:
   frequency: 100kHz
   id: bus_a
 
-# USING EXTERNAL COMPONENT
-external_components:
-  - source: github://pr#3552
-    components: [es8388]
-    refresh: 0s
-es8388:
-
-# USING INTERNAL COMPONENT
-#audio_dac:
-#  - platform: es8388
-#    id: es8388_dac
-
 output:
   - platform: gpio
     pin:
@@ -98,6 +86,10 @@ i2s_audio:
     i2s_lrclk_pin: GPIO25
     i2s_bclk_pin:  GPIO5
 
+audio_dac:
+  - platform: es8388
+    id: es8388_dac
+
 microphone:
   - platform: i2s_audio
     id: box_mic
@@ -116,7 +108,7 @@ speaker:
     dac_type: external
     channel: stereo
     buffer_duration: 300ms
-#    audio_dac: es8388_dac # <<< adding this line breaks volume control in MA.
+    audio_dac: es8388_dac
 
   - platform: mixer
     id: mixing_speaker
