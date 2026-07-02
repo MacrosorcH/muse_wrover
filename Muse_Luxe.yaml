@@ -59,6 +59,18 @@ i2c:
   frequency: 100kHz
   id: bus_a
 
+# USING EXTERNAL COMPONENT
+external_components:
+  - source: github://pr#3552
+    components: [es8388]
+    refresh: 0s
+es8388:
+
+# USING INTERNAL COMPONENT
+#audio_dac:
+#  - platform: es8388
+#    id: es8388_dac
+
 output:
   - platform: gpio
     pin:
@@ -84,10 +96,6 @@ i2s_audio:
     i2s_lrclk_pin: GPIO25
     i2s_bclk_pin:  GPIO5
 
-audio_dac:
-  - platform: es8388
-    id: es8388_dac
-    
 speaker:
   - platform: i2s_audio
     id: box_speaker
@@ -96,7 +104,7 @@ speaker:
     dac_type: external
     channel: stereo
     buffer_duration: 300ms
-    audio_dac: es8388_dac
+#    audio_dac: es8388_dac # <<< adding this line breaks volume control in MA.
 
   - platform: mixer
     id: mixing_speaker
