@@ -4,11 +4,11 @@ substitutions:
 esphome:
   name: muse-luxe
   friendly_name: Muse Luxe
-  min_version: 2026.5.0
+  min_version: 2026.6.0
   name_add_mac_suffix: true
   project:
     name: realdeco.muse_wrover
-    version: "2026.5.0"
+    version: "2026.6.0"
   on_boot:
     priority: -100
     then:
